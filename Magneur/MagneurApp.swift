@@ -23,6 +23,11 @@ struct MagneurApp: App {
             StoredRawLocation.self,
             // Journal models
             StoredMindsetEntry.self,
+            // Finance models
+            StoredFinancialItem.self,
+            StoredFinancialGoal.self,
+            StoredNetWorthSnapshot.self,
+            StoredFinanceSettings.self,
         ])
         let modelConfiguration = ModelConfiguration(
             schema: schema,
@@ -45,6 +50,7 @@ struct MagneurApp: App {
                     WorkoutStore.shared.configure(with: sharedModelContainer.mainContext)
                     TravelStore.shared.configure(with: sharedModelContainer.mainContext)
                     JournalStore.shared.configure(with: sharedModelContainer.mainContext)
+                    FinanceStore.shared.configure(with: sharedModelContainer.mainContext)
                 }
         }
     }
