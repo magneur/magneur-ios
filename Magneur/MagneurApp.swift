@@ -21,6 +21,8 @@ struct MagneurApp: App {
             StoredTrip.self,
             StoredVisitedCountry.self,
             StoredRawLocation.self,
+            // Journal models
+            StoredMindsetEntry.self,
         ])
         let modelConfiguration = ModelConfiguration(
             schema: schema,
@@ -42,6 +44,7 @@ struct MagneurApp: App {
                 .onAppear {
                     WorkoutStore.shared.configure(with: sharedModelContainer.mainContext)
                     TravelStore.shared.configure(with: sharedModelContainer.mainContext)
+                    JournalStore.shared.configure(with: sharedModelContainer.mainContext)
                 }
         }
     }
