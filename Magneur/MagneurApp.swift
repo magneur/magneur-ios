@@ -28,6 +28,10 @@ struct MagneurApp: App {
             StoredFinancialGoal.self,
             StoredNetWorthSnapshot.self,
             StoredFinanceSettings.self,
+            // ToDo models
+            StoredToDoTask.self,
+            StoredProject.self,
+            StoredHabit.self,
         ])
         let modelConfiguration = ModelConfiguration(
             schema: schema,
@@ -51,6 +55,7 @@ struct MagneurApp: App {
                     TravelStore.shared.configure(with: sharedModelContainer.mainContext)
                     JournalStore.shared.configure(with: sharedModelContainer.mainContext)
                     FinanceStore.shared.configure(with: sharedModelContainer.mainContext)
+                    ToDoStore.shared.configure(with: sharedModelContainer.mainContext)
                 }
         }
     }
